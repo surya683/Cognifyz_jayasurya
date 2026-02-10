@@ -1,0 +1,103 @@
+/* public/style.css */
+
+/* 1. Background & Base Settings */
+body {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Deep Blue Gradient */
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center;
+    padding: 20px;
+}
+
+/* 2. Glassmorphism Card (The "Frosted Glass" Look) */
+.card-custom {
+    background: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    backdrop-filter: blur(10px); /* Blur effect behind the card */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px; /* Softer rounded corners */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Deep shadow for 3D effect */
+    overflow: hidden; /* Keeps content inside rounded corners */
+}
+
+/* 3. Typography Fixes */
+h2 {
+    font-weight: 700;
+    color: #1e3c72;
+    margin-bottom: 20px;
+    white-space: nowrap; /* Prevents "Create Account" from breaking lines */
+}
+
+label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* 4. Input Fields (Clean & Spacious) */
+.form-control {
+    border-radius: 10px;
+    padding: 12px 15px; /* More breathing room inside inputs */
+    border: 1px solid #ddd;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 4px rgba(42, 82, 152, 0.1);
+    border-color: #2a5298;
+    background-color: #fff;
+}
+
+/* 5. Buttons & Interactive Elements */
+.btn-primary {
+    background: #2a5298;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: #1e3c72;
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+}
+
+/* 6. Password Strength Meter */
+.strength-meter {
+    height: 6px;
+    background-color: #e9ecef;
+    margin-top: 8px;
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy animation */
+}
+
+/* 7. Routing Sections */
+.route-section {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+.route-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Navbar Tweaks */
+.navbar {
+    background: transparent !important; /* Make navbar blend in */
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.navbar-brand { font-weight: bold; font-size: 1.5rem; }
+.nav-link { font-size: 1.1rem; opacity: 0.8; }
+.nav-link:hover, .nav-link.active { opacity: 1; font-weight: bold; }

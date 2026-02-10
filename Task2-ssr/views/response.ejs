@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T2 Response Page</title>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
+    
+    <h1 style="color: green;">Success!</h1>
+    <p>User <strong><%= name %></strong> has been added to the temporary storage.</p>
+    
+    <hr style="width: 50%; margin: 20px auto;">
+    
+    <h3>Current Database (In-Memory):</h3>
+    <ul style="list-style-type: none; padding: 0;">
+        <% allUsers.forEach(function(user) { %>
+            <li style="background: #eee; margin: 5px auto; width: 200px; padding: 5px;">
+                <%= user.username %> (<%= user.age %>)
+            </li>
+        <% }); %>
+    </ul>
+
+    <br>
+    <a href="/" style="text-decoration: none; color: blue;">Add Another User</a>
+</body>
+</html>

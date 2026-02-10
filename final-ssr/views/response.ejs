@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Response</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+    <h2 style="color: #4ade80;">Success!</h2> <p>User <strong><%= name %></strong> has been added.</p>
+    
+    <hr>
+    
+    <h3>Database</h3>
+    <ul class="user-list">
+        <% allUsers.forEach(function(user) { %>
+            <li class="user-item">
+                <strong><%= user.username %></strong> (Age: <%= user.age %>)
+            </li>
+        <% }); %>
+    </ul>
+    
+    <a href="/" style="text-decoration: none;">
+        <button style="margin-top: 15px;">Add Another User</button>
+    </a>
+</div>
+</body>
+</html>

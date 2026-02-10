@@ -1,0 +1,100 @@
+/* public/style.css */
+
+/* 1. Background & Base Settings */
+body {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    overflow-x: hidden; /* Prevents horizontal scroll during animations */
+}
+
+/* 2. Glassmorphism Card */
+.card-custom {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* 3. Typography */
+h2, h3, h4 {
+    font-weight: 700;
+    color: #1e3c72;
+}
+
+/* 4. Inputs */
+.form-control {
+    border-radius: 10px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+.form-control:focus {
+    box-shadow: 0 0 0 4px rgba(42, 82, 152, 0.1);
+    border-color: #2a5298;
+    background-color: #fff;
+}
+
+/* 5. Buttons */
+.btn-primary {
+    background: #2a5298;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+.btn-primary:hover {
+    background: #1e3c72;
+    transform: translateY(-2px);
+}
+
+/* 6. Navbar */
+.navbar { background: transparent !important; }
+.nav-link { font-size: 1.1rem; opacity: 0.8; color: white !important; cursor: pointer; }
+.nav-link.active { opacity: 1; font-weight: bold; background-color: rgba(255,255,255,0.1); border-radius: 20px; }
+
+/* --- 7. ROUTING & ANIMATIONS (This was missing!) --- */
+
+/* By default, hide all sections */
+.route-section {
+    display: none;
+    opacity: 0; /* Start invisible for animation */
+}
+
+/* Only show the one with 'active' class */
+.route-section.active {
+    display: block;
+    animation: slideUpFade 0.5s ease-out forwards; /* Run animation */
+}
+
+/* The Animation Keyframes */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Start slightly lower */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End in correct spot */
+    }
+}
+
+/* Password Strength Meter */
+.strength-meter {
+    height: 6px;
+    background-color: #e9ecef;
+    margin-top: 8px;
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Live List Item Animation */
+.animate-fade-in {
+    animation: slideUpFade 0.4s ease-out forwards;
+}
